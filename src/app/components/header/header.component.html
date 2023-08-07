@@ -1,0 +1,120 @@
+<header class="">
+
+<div class="site-mobile-menu site-navbar-target mb-5">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+  <div class="py-2 bg-light">
+    <div  class="container">
+      <div class="row align-items-center">
+        <div *ngIf="!isLoggedIn()" class="col-lg-9 d-none d-lg-block">
+          <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> Have a questions?</a> 
+          <a href="#" class="small mr-3"><span class="icon-phone2 mr-2"></span> 10 20 123 456</a> 
+          <a href="#" class="small mr-3"><span class="icon-envelope-o mr-2"></span> info@mydomain.com</a> 
+        </div>
+        <div *ngIf="isLoggedIn()" class="col-lg-9 d-none d-lg-block">
+          <div class="dropdown">
+            <a href="#" class="small mr-3 dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="icon-user mr-2"></span>Welcome {{decodedToken.Fname}}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item small" routerLink="edit-profile">Edit Profile</a>
+              <!-- Add more dropdown items as needed -->
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-3 text-right">
+          <a class="cursor-pointer" *ngIf="isLoggedIn()" (click)="logout()"  class="small mr-3"><span class="cursor-pointer icon-unlock-alt"></span> Logout</a>
+          <a class="cursor-pointer" *ngIf="!isLoggedIn()" routerLink="login" class="small mr-3"><span class="cursor-pointer icon-unlock-alt"></span> Log In</a>
+          <a class="cursor-pointer" *ngIf="!isLoggedIn()"  routerLink="register-as" class="cursor-pointer small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="site-logo">
+          <a href="index.html" class="d-block">
+            <img src="assets/images/logo.jpg" alt="Image" class="img-fluid">
+          </a>
+        </div>
+        <div class="mr-auto">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+              <li>
+                <a href="index.html" class="nav-link text-left">Home</a>
+              </li>
+
+              <li *ngIf="isLoggedIn() && teacher" class="has-children">
+                <a class="nav-link text-left">Teacher Dashboard</a>
+                <ul  class="dropdown">
+                  <li><a routerLink="add-course">Add Course</a></li>
+                  <li><a routerLink="veiw-courses">All Courses</a></li>
+                  <li><a routerLink="coursesTab">Manage Courses</a></li>
+                </ul>
+              </li>
+              
+              <li *ngIf="isLoggedIn() && admin" class="has-children">
+                <a class="nav-link text-left">Admin Dashboard</a>
+                <ul  class="dropdown">
+                  <li><a routerLink="teachers-list">Teachers List</a></li>
+                  <li><a routerLink="students-list">Student List</a></li>
+                  <li><a routerLink="courses-list">Courses List</a></li>
+                </ul>
+              </li>
+
+              <li *ngIf="isLoggedIn() && student" class="has-children">
+                <a class="nav-link text-left">Student Dashboard</a>
+                <ul  class="dropdown"> 
+                  <li><a routerLink="student-courses">My Courses</a></li>
+                  
+                </ul>
+              </li>
+
+              <li *ngIf="isLoggedIn() && parent" class="has-children">
+                <a class="nav-link text-left">Parent Dashboard</a>
+                <ul  class="dropdown"> 
+                  <li><a routerLink="view-child">Child Courses</a></li>
+                  
+                </ul>
+              </li>
+              
+              <li class="active">
+                <a routerLink="search-teacher" class="nav-link text-left">Teacher Look Up</a>
+              </li>
+              <!-- <li>
+                <a routerLink="view-courses" class="nav-link text-left">Courses</a>
+              </li> -->
+              <li>
+                  <a href="contact.html" class="nav-link text-left">Contact</a>
+                </li>
+            </ul>                                                                                                                                                                                                                                                                                       
+          </nav>
+
+        </div>
+        <div class="ml-auto">
+          <div class="social-wrap">
+            <a href="#"><span class="icon-facebook"></span></a>
+            <a href="#"><span class="icon-twitter"></span></a>
+            <a href="#"><span class="icon-linkedin"></span></a>
+
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+              class="icon-menu h3"></span></a>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+
+  </header>

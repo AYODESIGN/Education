@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table margin-top">
+    <tr>
+    <th>Course cover</th>
+    <th>Course Name</th>
+    <th>Student Name</th>
+    <th>Score</th>
+    <th>Actions</th>
+
+    </tr>
+    <tr *ngFor=" let course of enrollments">
+        <td><img [src]="course.courseId.img" width="50px" alt=""></td>
+        <td>{{ course.courseId.name }}</td>
+        <td>{{ course.studentId.firstName }}</td>
+        <td><ng-container *ngFor=" let score of scoreTab" >
+          <span *ngIf="course.courseId._id == score.enrollmentId.courseId 
+          && course.studentId._id == score.enrollmentId.studentId
+          ">{{score.score}}</span>
+        </ng-container></td>
+        
+       <td>
+         <button class="btn btn-warning mr-2" (click)="addScore(course._id)">Scoring</button>
+       </td>
+       
+    </tr>
+    </table>
+</div>

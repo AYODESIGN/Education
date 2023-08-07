@@ -1,0 +1,55 @@
+
+
+ .card-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px; 
+  width: 300px;
+  overflow: hidden; 
+   }
+
+.card {
+  background: #FFF;
+  width: 300px;
+}
+
+.card-img-top {
+  height: 300px;
+}
+
+.card-text,
+span {
+  color: #779a94;
+}
+
+/* Truncate the description text if it exceeds the fixed height */
+.card-block .description-container {
+  max-height: 100px; /* Adjust the value to your desired fixed height */
+  overflow: hidden;
+}
+
+.card-block .description-container p {
+  margin: 0; /* Remove any margin to avoid extra space */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-description-container {
+  padding: 10px; /* Add your desired padding value here */
+}
+
+.card-title {
+  margin-bottom: 10px; /* Add some bottom margin to separate the title from the description */
+}
+
+/* Truncate the description text if it exceeds the fixed height */
+.card-block .description-container {
+  max-height: 100px; /* Adjust the value to your desired fixed height */
+  overflow: hidden;
+}
+
+.card-block .description-container p {
+  margin: 0; /* Remove any margin to avoid extra space */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

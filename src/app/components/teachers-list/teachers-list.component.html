@@ -1,0 +1,31 @@
+<div class="container">
+   <table class="table margin-top">
+      <tr>
+      <th>Profile Photo</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Specialty</th>
+      <th>Confirmed Teacher</th>
+      <th>Actions</th>
+  
+      </tr>
+      <tr *ngFor=" let teacher of teachers">
+         <td><img [src]="teacher.img" width="50px" alt=""></td>
+         <td>{{ teacher.firstName }}</td>
+         <td><span></span>{{ teacher.lastName }}</td>
+         <td><span></span> {{ teacher.specialty }}</td>
+         <!-- <td><span class="fa fa-check"></span> {{ teacher.status }}</td> -->
+         <td>
+              {{ teacher.status }}
+              <button class="btn" [ngClass]="teacher.status === 'Confirmed' ? 'btn-success fa fa-check' : 'btn-danger fa fa-x'" (click)="confirmTeacher(teacher._id, teacher.status)"></button>
+            </td>
+              
+        
+  
+         <td>
+          <button class="btn btn-danger mr-2" (click)="deleteCourse(teacher._id)">Delete</button>
+         </td>
+         
+      </tr>
+      </table>
+</div>

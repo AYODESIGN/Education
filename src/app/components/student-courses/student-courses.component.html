@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table margin-top">
+    <tr>
+    <th>Course Photo</th>
+    <th>Course Name</th>
+    <th>Course Score</th>
+    <th>Teacher evaluation</th>
+    </tr>
+    <tr *ngFor=" let course of courses">
+        <td><img [src]="course.courseId.img" width="50px" alt=""></td>
+       
+        <td>{{ course.courseId.name }}</td>
+        <td><ng-container *ngFor=" let score of scoreTab" >
+          <span *ngIf="course.courseId._id == score.enrollmentId.courseId 
+          && course.studentId._id == score.enrollmentId.studentId
+          ">{{score.score}}</span>
+        </ng-container></td>
+        <td><ng-container *ngFor=" let score of scoreTab" >
+          <span *ngIf="course.courseId._id == score.enrollmentId.courseId 
+          && course.studentId._id == score.enrollmentId.studentId
+          ">{{score.evaluation}}</span>
+        </ng-container></td>
+     
+       
+    </tr>
+    </table>
+</div>

@@ -1,0 +1,73 @@
+  
+  <div class="site-section ftco-subscribe-1 site-blocks-cover marginCustom" style="background-image: url('assets/images/bg_1.jpg')">
+    <div class="container">
+      <div class="row align-items-end justify-content-center text-center">
+        <div class="col-lg-7"> 
+          <h2 class="customHight pt-5">Login</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+<div class="custom-breadcrumns border-bottom">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">Login</span>
+  </div>
+</div>
+
+  <div class="site-section">
+      <div class="container">
+
+
+          <div class="row justify-content-center">
+              <form [formGroup]="loginForm" class="col-md-5">
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <label for="phone">Phone</label>
+                      <input formControlName="phone" type="text" class="form-control form-control-lg">
+                  </div>
+                  <div class="m-auto" *ngIf="loginForm.controls['phone'].invalid && (loginForm.controls['phone'].touched || loginForm.controls['phone'].dirty)">
+                      <div *ngIf="loginForm.controls['phone'].errors.required">
+                        Phone is required.
+                      </div>
+                      <div *ngIf="loginForm.controls['phone'].errors.pattern">
+                          Phone must be a number.
+                        </div>
+                      <div *ngIf="loginForm.controls['phone'].errors.minlength">
+                          Phone must have at least 8 digits.
+                      </div>
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <label for="pword">Password</label>
+                        <input formControlName="pwd" type="password" class="form-control form-control-lg">
+                    </div>
+                    <div class="m-auto" *ngIf="loginForm.controls['pwd'].invalid && (loginForm.controls['pwd'].touched || loginForm.controls['pwd'].dirty)">
+                      <div *ngIf="loginForm.controls['pwd'].errors.required">
+                        Password is required.
+                      </div>
+                      <div *ngIf="loginForm.controls['pwd'].errors.minlength">
+                         Password must have at least 6 characters.
+                      </div>
+                      <div *ngIf="loginForm.controls['pwd'].errors.maxlength">
+                         Password must have at most 12 characters.
+                      </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <input (click)="login()" [disabled]="loginForm.invalid" type="submit" value="Login" class="btn btn-primary btn-lg px-5">
+                  </div>
+                  <div *ngIf="errorMsg" class="error-message">Your account is not yet verified by the addminstration please check agian later</div>
+                </div>
+              </div>
+          </form>
+          
+
+        
+      </div>
+  </div>
+
+  

@@ -1,0 +1,152 @@
+.course-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  .course-info .fas {
+    margin-right: 5px;
+  }
+  .full-width-btn {
+  width: 100%;
+}
+
+.course-1-item {
+  display: flex;
+  flex-direction: column;
+  height: 50;
+}
+
+  
+  .course-1-item .thumnail {
+    height: 40%;
+  }
+  
+  .course-1-item .course-1-content {
+    height: 20%;
+  }
+   
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+body, p {
+font-family: Roboto, sans-serif;
+font-weight: 300;
+}
+
+p {
+margin: 0;
+}
+
+.card {
+  background: #FFF;
+  width: 300px;
+  margin: 40px auto;
+}
+
+.card-img-top {
+  height: 300px
+}
+
+.card-top-text {
+  color: #FFF;
+  font-size: 1.5em;
+  position: absolute;
+  top:0;
+  padding: 40px;
+}
+
+.card-text, span {
+  color: #779a94;
+}
+
+.card-block {
+  padding: 20px 35px;
+}
+
+.card-block .card-course-info:first-child {
+  width: 60%;
+  float: left;
+}
+
+.card-block .card-course-info {
+  display: inline-block;
+  height: 100px;
+}
+
+.card-block .card-course-info figure {
+  max-width: 54px;
+  height: 54px;
+  text-align: center;
+  margin: 0 10px;
+  float: left;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.card-block .card-course-info figure img {
+max-width: 100px;
+margin-left: -10px;
+}
+
+.card-block .card-course-info span {
+  display: block;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.card-block .card-course-info span i {
+  padding-right: 10px;
+}
+
+.icon {
+  display: inline-block;
+  width: 1.3em;
+  height: 1.3em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.icon.icon-icon-heart {
+  height: 1em;
+}
+
+.card-block.card-bottom {
+  padding: 0px;
+}
+
+.card-block a.btn {
+  display: block;
+  width: 100%;
+  height: 80px;
+  background-color: #51be78;
+  border-radius: 0px;
+  color: #FFF;
+  text-align: center;
+  line-height: 65px;
+  font-size: 20px;
+}
+
+.icon-icon-play {
+  width: 2em;
+  height: 2em;
+}
+
+
+span.tutor-description {
+font-size: 12px !important;
+}
+
+.margin-top{
+  margin-top: 150px;
+}
+.margin-bottom{
+  margin-bottom: 150px;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <table class="table margin-top">
+    <tr>
+    <th>Course Photo</th>
+    <th>Course Name</th>
+    <th>Actions</th>
+
+    </tr>
+    <tr *ngFor=" let course of courses">
+        <td><img [src]="course.img" width="50px" alt=""></td>
+       <td>{{ course.name }}</td>
+       <td>
+         <button class="btn btn-warning mr-2" (click)="goToInfo(course._id)">Display</button>
+        <button class="btn btn-danger mr-2" (click)="deleteCourse(course._id)">Delete</button>
+       </td>
+       
+    </tr>
+    </table>
+</div>

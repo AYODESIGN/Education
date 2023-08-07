@@ -1,0 +1,100 @@
+
+
+  
+  <div class="margin-top site-section ftco-subscribe-1 site-blocks-cover marginCustom" style="background-image: url('assets/images/bg_1.jpg')">
+    <div class="container">
+      <div class="row align-items-end justify-content-center text-center">
+        <div class="col-lg-7"> 
+          <h2 class="customHight">{{title}}</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+<div class="custom-breadcrumns border-bottom ">
+  <div class="container">
+    <a href="index.html">Home</a>
+    <span class="mx-3 icon-keyboard_arrow_right"></span>
+    <span class="current">{{title}}</span>
+  </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+
+
+        <div class="row justify-content-center">
+            <form [formGroup]="addCourseForm" class="col-md-5">
+                <div class="row">
+                 
+                    <div  class="col-md-12 form-group">
+                        <label for="name">Name</label>
+                        <input formControlName="name" type="text" id="name" class="form-control form-control-lg">
+                    </div>
+                    <div class="m-auto" *ngIf="addCourseForm.controls['name'].invalid && (addCourseForm.controls['name'].touched || addCourseForm.controls['name'].dirty)">
+                      <div *ngIf="addCourseForm.controls['name'].errors.required">
+                      Name is required.
+                      </div>
+                      <div *ngIf="addCourseForm.controls['name'].errors.minlength">
+                    Name must have at least 3 characters.
+                      </div>
+                    </div>
+
+                    <div  class="col-md-12 form-group">
+                        <label for="name">Description</label>
+                        <input formControlName="description" type="text" id="description" class="form-control form-control-lg">
+                    </div>
+                <div class="m-auto" *ngIf="addCourseForm.controls['description'].invalid && (addCourseForm.controls['description'].touched || addCourseForm.controls['description'].dirty)">
+                  <div *ngIf="addCourseForm.controls['description'].errors.required">
+                    description is required.
+                  </div>
+                  <div *ngIf="addCourseForm.controls['description'].errors.minlength">
+                      description must have at least 5 characters.
+                  </div>
+                </div>
+                <div class="col-md-12 form-group">
+                  <label for="duration">Duration</label>
+                  <input formControlName="duration" type="number" id="duration" class="form-control form-control-lg">
+              </div>
+              <div class="m-auto" *ngIf="addCourseForm.controls['duration'].invalid && (addCourseForm.controls['duration'].touched || addCourseForm.controls['duration'].dirty)">
+                  <div *ngIf="addCourseForm.controls['duration'].errors.required">
+                    duration is required.
+                  </div>
+                  <div *ngIf="addCourseForm.controls['duration'].errors.pattern">
+                      duration must be a number.
+                    </div>
+                  <div *ngIf="addCourseForm.controls['duration'].errors.minlength">
+                      duration must have at least 1 digits.
+                  </div>
+                </div>
+                </div>
+                <!-- img input -->
+                <div class="form-group">
+                  <input type="file"  class="form-control" style="visibility: hidden;" #filePicker (change)='onImageSelected($event)'>
+                </div> 
+                <div class="text-center">
+                  <button class="btn btn-primary" (click)="filePicker.click()">Select Course Photo</button>
+                </div>
+                <div class="text-center mb-2">
+                  <img [src]="imagePreview" alt="" width="200px">
+                </div>
+                
+
+                <div class="row text-center">
+                    <div *ngIf="!editMode" class="col-12">
+                        <input (click)="addCourse()" [disabled]="addCourseForm.invalid" type="submit" value="Add Course" class="btn btn-primary btn-lg px-5">
+                    </div>
+                    <div  *ngIf="editMode" class="col-12">
+                      <input (click)="edit()"  type="submit" value="Edit Course" class="btn btn-primary btn-lg px-5">
+                  </div>
+                </div>
+            </form>
+        </div>
+        
+
+      
+    </div>
+</div>
+

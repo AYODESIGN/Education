@@ -1,0 +1,62 @@
+<div class="margin-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="container">
+        <h2>Assign Course</h2>
+      
+        <!-- <label><i class="fas fa-user-graduate"></i> Select Student:</label>
+        <select [(ngModel)]="selectedStudent">
+          <option *ngFor="let student of students" [value]="student._id">{{ student.firstName }}</option>
+        </select> -->
+
+         <label><i class="fas fa-user-graduate"></i> Selected Student:</label>
+        <p>{{ student.firstName }}</p>
+        
+        <label><i class="fas fa-chalkboard-teacher"></i> Select Teacher:</label>
+        <select [(ngModel)]="selectedTeacher" (change)="filterCoursesByTeacher()">
+          <option *ngFor="let teacher of teachers" [value]="teacher._id">{{ teacher.firstName }}</option>
+        </select>
+        
+        <label><i class="fas fa-book"></i> Select Course:</label>
+        <select [(ngModel)]="selectedCourse">
+          <option *ngFor="let course of filteredCourses" [value]="course._id">{{ course.name }}</option>
+        </select>
+        
+        <div *ngIf="selectedTeacher && filteredCourses.length === 0" class="no-courses-message">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>There are no courses for this teacher.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="col-6">
+      <div class="container">
+        <h2>Enrollled in</h2>
+        <div *ngFor="let enrolled of studentCourses">
+          <h5>{{ enrolled.courseId.name }}</h5>
+          <p>Duration: {{ enrolled.courseId.duration }}</p>
+        </div>
+      </div>
+    </div> -->
+    <div class="container col-6">
+      <h2>Enrollled in</h2>
+    
+    <div *ngFor="let enrolled of studentCourses" class="list-group ">
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active mb-1">
+        <div  class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ enrolled.courseId.name }}</h5>
+          <small>{{enrolled.courseId.duration}} days </small>
+        </div>
+        <p class="mb-1">{{enrolled.courseId.description}}</p>
+        <!-- <small>Donec id elit non mi porta.</small> -->
+      </a>
+    </div>
+     <p *ngIf="studentCourses.length == 0" class="mb-1">No courses assigned for this student</p>
+  </div>
+  </div>
+</div>
+
+<div class="text-center m-2"> 
+  <button class="text-white btn btn-success" (click)="assignStudent(selectedCourse,selectedStudent)">Assign Students</button>
+</div>

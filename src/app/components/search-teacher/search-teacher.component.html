@@ -1,0 +1,51 @@
+<div class="container">
+    <form class="margin-top" (ngSubmit)="teachersBySearch(specialty)" #searchForm="ngForm">
+        <div class="form-group">
+ 
+        <label for="specialty">Specialty:</label>
+        <input
+          type="text"
+          id="specialty"
+          name="specialty"
+          required
+          [(ngModel)]="specialty"
+          #specialtyInput="ngModel"
+        />
+        <button class="btn btn-primary" type="submit" [disabled]="searchForm.invalid">Search</button>
+        <div *ngIf="specialtyInput.invalid && specialtyInput.touched" class="error">
+          Specialty is required.
+        </div>
+        
+
+      </div>
+   
+
+         
+</form>
+      
+          
+  
+      <div *ngIf="teachers.length > 0">
+        <h2>Search Results:</h2>
+        <ul  class="list-unstyled">
+    
+            <li *ngFor="let teacher of teachers">
+                <div class="ftco-testimonial-1">
+                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
+                      <img [src]="teacher.img" alt="Image" class="img-fluid mr-3">
+                      <div>
+                        <h3>{{ teacher.firstName }}</h3>
+                        <span>{{ teacher.specialty }}</span>
+                      </div>
+                    </div>
+                  </div>
+              </li> 
+           
+          <!-- <li *ngFor="let teacher of teachers">
+            {{ teacher.firstName }} - {{ teacher.specialty }}
+          </li> -->
+        </ul>
+      </div>
+</div>
+
+  

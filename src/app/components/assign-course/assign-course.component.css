@@ -1,0 +1,29 @@
+.margin-top{
+    margin-top: 150px;
+}
+
+  
+  h2 {
+    color: #51be78;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  select {
+    padding: 5px;
+  }
+  
+  .no-courses-message {
+    color: #c40000;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .fa-user-graduate, .fa-chalkboard-teacher, .fa-book, .fa-exclamation-circle {
+    margin-right: 5px;
+  }
+  

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card-container">
+      <div class="card">
+        <img class="card-img-top" [src]="course.img" alt="item">
+        <div class="card-block contianer card-bottom">
+          <div class="title-description-container">
+            <h3 class="card-title">{{ course.name }}</h3>
+            <div class="description-container">
+              <p class="card-text">{{ course.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-block course-info">
+          <span><i class="fas fa-clock pl-1" aria-hidden="true"></i>{{ course.duration }} days</span>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
